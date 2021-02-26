@@ -11,8 +11,12 @@
   </head>
 
   <body>
+    <div class="wrapper">
     <%= render 'shared/header' %>
+    <p class="notice"><%= notice %>
+    <p class="alert"><%= alert %>
     <%= yield %>
     <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>

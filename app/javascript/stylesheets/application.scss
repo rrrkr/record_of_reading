@@ -1,1 +1,86 @@
 @import '~bootstrap/scss/bootstrap';
+
+/* 共通 */
+.wrapper{
+  min-height:100vh;
+  position: relative;
+
+}
+
+/* header */
+img{
+  max-width:100%;
+  &.logo {
+    width:40px;
+  }
+}
+
+.page-header{
+  a{
+    display:flex;
+    align-items:center;
+  }
+}
+
+/* footer */
+footer {
+  width:100%;
+  background:#212529;
+  text-align:center;
+  padding: 26px 0;
+  p{
+    color: white;
+    font-size: 0.875rem;
+  }
+  position:absolute;
+  bottom:0;
+  z-index:1;
+}
+
+/* home - bg */
+.slide{
+  margin-top:-2px;
+}
+
+/* home - main */
+.main-content{
+  position:absolute;
+  top:50%;
+  left:50%;
+  z-index:1;
+  transform:translate(-50%,-50%);
+}
+.card{
+  height:250px;
+  width:500px;
+}
+.card-body{
+  display:grid;
+  justify-content:center;
+}
+.card-btn{
+  width:180px;
+  margin-left:70px;
+}
+.card-link{
+  margin-top:10px;
+  margin-left:70px;
+}
+
+/* devise - form*/
+.field_with_errors {
+  display:contents;
+  input,textarea{
+    @extend .is-invalid !optional;
+  }
+}
+.rounded{
+  width:400px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.sign-up-title, .login-title{
+  margin-top:40px;
+  margin-bottom:20px;
+  margin-left:20px;
+}

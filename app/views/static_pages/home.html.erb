@@ -26,8 +26,8 @@
     <div class="card-body">
       <h1 class="card-title">Record of Reading</h1>
       <p class="card-text">あなたの読書記録を管理してみませんか。</p><br>
-      <a href="#" class="card-btn btn btn-primary">ログイン</a>
-      <a href="#" class="card-link">新規登録</a>
+      <%= link_to "ログイン",new_user_session_path,class:"card-btn btn btn-primary",method: :get %>
+      <%= link_to "新規登録",new_user_registration_path,class:"card-link",method: :get %>
     </div>
   </div>
 </div>
