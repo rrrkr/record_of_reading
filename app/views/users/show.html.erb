@@ -1,47 +1,99 @@
-<div class="container">
+<div class="container wrapper-show">
   <div class="row">
-    <div class="col-3">
-      <div class="card">
+    <div class="left-wrapper col-3">
+      <div class="profile-card card shadow border-secondary">
         <div class="card-body">
+          <%= image_tag "default.png",class:"rounded-circle",:size => '100x100'%>
           <h5 class="card-title"><%= current_user.name %></h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text"><%= "email : #{@current_user.email}" %></p>
         </div>
       </div>
 
-      <div class="card">
+      <div class="books-info-card card shadow border-secondary">
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <h5 class="card-title">本棚</h5>
+            <table class="table table-hover">
+              <tbody>
+                <tr>
+                  <th scope="row">本の数</th>
+                  <td><%= "#{@books.length}" %></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+
+      <div class="add-book-card card shadow border-secondary">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">本の追加</button>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">本の登録画面</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <%= form_with url: users_path do |f| %>
+            <div class="modal-body">
+              <div class="form-group">
+                <%= f.label :src,'画像' %>
+                <%= f.file_field :src,class: "form-control-file" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :title,'タイトル' %>
+                <%= f.text_field :title,class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :categoly,'カテゴリ' %>
+                <%= f.text_field :categoly,class: "form-control" %>
+                <small class="form-text text-muted">空白区切で入力してください 例) コンピュータ　歴史</small>
+              </div>
+              <div class="form-group">
+                <%= f.label :pages,'ページ数' %>
+                <%= f.number_field :pages,class: "form-control" %>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+              <%= f.submit "追加",class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
-    <div class="col-9">
-      <div class="card-deck">
-  <div class="card">
-    <img class="card-img-top" src=".../100px200/" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
     </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src=".../100px200/" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src=".../100px200/" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
+
+    <div class="list-books col-9">
+      <div class="row">
+        <% @books.each do |book| %>
+        <div class="item rounded-0 border border-secondary shadow">
+          <%= image_tag book.src.url ,class:"img-thumbnail" %>
+          <div class="item-body">
+            <h5 class="item-title"><%= book.title %></h5>
+            <table class="table table-hover">
+              <tbody>
+                <tr>
+                  <th scope="row">カテゴリ</th>
+                  <td><%= "#{book.categoly}" %></td>
+                </tr>
+                <tr>
+                  <th scope="row">ページ数</th>
+                  <td><%= "#{book.pages}" %></td>
+                </tr>
+                <tr>
+                  <th scope="row">作成日</th>
+                  <td><%= "#{book.created_at.strftime('%Y/%m/%d')}" %></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class=""><small class="text-muted"><%= "更新日　: #{book.updated_at.strftime('%Y/%m/%d')}" %></small></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

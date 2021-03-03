@@ -7,4 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(name:"hoge",email:"hoge@example.com",password:"password")
-Book.create!(user_id:1,title:"sample",categoly:"science math",pages:250,favorite:true,src:"xxxxx.com")
+
+for i in 1..6 do
+  Book.create!(
+    user_id:1,
+    title:"呪術廻戦#{i}",
+    categoly:"comic",
+    pages:198,
+    favorite:false,
+    src: File.open("#{Rails.root}/public/images/jujutsu#{i}.jpeg")
+  )
+end

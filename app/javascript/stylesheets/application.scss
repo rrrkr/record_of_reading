@@ -84,3 +84,43 @@ footer {
   margin-bottom:20px;
   margin-left:20px;
 }
+
+/* usersコントローラ - show */
+.left-wrapper{
+  margin-top:6%;
+  .profile-card{
+    margin-bottom:26px;
+    text-align:center;
+  }
+  .books-info-card{
+    margin-bottom:26px;
+    text-align:center;
+  }
+  .add-book-card{
+    margin-bottom:26px;
+    text-align:center;
+  }
+}
+
+
+
+.list-books{
+  .row{
+    display:grid;
+    gap:26px;
+    grid-template-columns:repeat(3,1fr);
+    margin-top:6%;
+    margin-bottom:120px;
+    .item{
+      text-align:center;
+      width:272px;
+      .img-thumbnail{
+        width:70%;
+        margin-bottom:20px;
+      }
+    }
+  }
+}
+.card-img-top{
+  width:50%;
+}

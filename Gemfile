@@ -34,6 +34,13 @@ gem 'devise-i18n'
 
 gem 'devise-i18n-views'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
+group :production do
+  gem 'fog-aws'
+ end
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
