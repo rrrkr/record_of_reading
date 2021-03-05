@@ -37,6 +37,8 @@ gem 'devise-i18n-views'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'kaminari'
+
 group :production do
   gem 'fog-aws'
  end

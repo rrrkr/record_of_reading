@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @books = current_user.books
+    @book_all = current_user.books
+    @books = Kaminari.paginate_array(current_user.books).page(params[:page]).per(6)
   end
 
   def create

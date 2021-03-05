@@ -1,12 +1,24 @@
-<header class="navbar navbar-dark bg-dark page-header fixed-top">
+<header class="navbar navbar-dark bg-dark navbar-inverse fixed-top">
   <div class="container">
-    <a class="nabvar-brand col-8 text-white" href="/">
-      <img src="/assets/logo.png" class="logo d-inline-block align-top" alt="">
-       Books
-    </a>
-  
-    <a class="col-1 text-white">hello</a>
-    <a class="col-1 text-white">good</a>
-    <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
+    <%= link_to "本棚app",root_path,id:"logo" %>
+    <nav >
+      <ul class="nav justify-content-end nav-content">
+        <li class="nav-item">
+          <%= link_to "ホーム",root_path,class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <% if logged_in? %>
+            <%= link_to "ログアウト",destroy_user_session_path,method: :delete,class:"nav-link" %>
+          <% else %>
+            <%= link_to "ログイン",new_user_session_path,class:"nav-link" %>
+          <% end %>
+        </li>
+        <% if logged_in? %>
+        <li class="nav-item">
+          <%= link_to "マイページ",'#' ,class:"nav-link"%>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
   </div>
 </header>

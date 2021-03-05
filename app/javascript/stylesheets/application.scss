@@ -4,21 +4,30 @@
 .wrapper{
   min-height:100vh;
   position: relative;
-
+  background-color:#ddd;
 }
+	
+
 
 /* header */
-img{
-  max-width:100%;
-  &.logo {
-    width:40px;
+#logo{
+  float:left;
+  margin-right:10px;
+  font-size:1.7em;
+  color:white;
+  text-transform:uppercase;
+  letter-spacing:-1px;
+  padding-top:9px;
+  font-weight:bold;
+  &:hover{
+    color:white;
+    text-decoration:none;
   }
 }
-
-.page-header{
-  a{
-    display:flex;
-    align-items:center;
+.nav-link{
+  color:white;
+  &:hover{
+    color:white;
   }
 }
 
@@ -38,9 +47,7 @@ footer {
 }
 
 /* home - bg */
-.slide{
-  margin-top:-2px;
-}
+
 
 /* home - main */
 .main-content{
@@ -50,22 +57,11 @@ footer {
   z-index:1;
   transform:translate(-50%,-50%);
 }
-.card-home{
-  height:250px;
-  width:500px;
+.jumbotron{
+  margin-bottom:0px;
+  text-align:center;
 }
-.card-body-home{
-  display:grid;
-  justify-content:center;
-}
-.card-btn-home{
-  width:180px;
-  margin-left:70px;
-}
-.card-link{
-  margin-top:10px;
-  margin-left:70px;
-}
+
 
 /* devise - form*/
 .field_with_errors {
@@ -74,10 +70,19 @@ footer {
     @extend .is-invalid !optional;
   }
 }
-.rounded{
+.signup-form {
   width:400px;
   margin-left:auto;
   margin-right:auto;
+  padding:20px;
+  background-color:white;
+}
+.signin-form {
+  width:400px;
+  margin-left:auto;
+  margin-right:auto;
+  padding:20px;
+  background-color:white;
 }
 .sign-up-title, .login-title{
   margin-top:40px;
@@ -105,15 +110,17 @@ footer {
 
 
 .list-books{
+  margin-bottom:120px;
   .row{
     display:grid;
     gap:26px;
     grid-template-columns:repeat(3,1fr);
     margin-top:6%;
-    margin-bottom:120px;
+    margin-bottom:20px;
     .item{
       text-align:center;
       width:272px;
+      background-color:white;
       .img-thumbnail{
         width:70%;
         margin-bottom:20px;
@@ -123,4 +130,7 @@ footer {
 }
 .card-img-top{
   width:50%;
+}
+.page{
+  margin-top:60px;
 }

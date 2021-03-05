@@ -1,8 +1,8 @@
-<h2 class="sign-up-title border-bottom">会員登録画面</h2>
+<h2 class="sign-up-title border-bottom border-dark">会員登録画面</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="rounded">
+  <div class="signup-form rounded border shadow border-light">
   <div class="field form-group">
     <%= f.label :name %><br/>
     <%= f.text_field :name,autofocus: true ,class: "form-control"%>

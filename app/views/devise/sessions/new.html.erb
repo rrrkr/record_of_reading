@@ -1,6 +1,7 @@
-<h2 class="login-title border-bottom">ログイン画面</h2>
+<h2 class="login-title border-bottom border-dark">ログイン画面</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name),html: { class: "rounded" }) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="signin-form rounded border shadow border-light">
   <div class="field form-group">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
@@ -23,4 +24,5 @@
   </div>
 
   <%= link_to "まだ会員登録してない方は",new_user_registration_path,class:"signup-link",method: :get %>
+  </div>
 <% end %>

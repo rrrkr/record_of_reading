@@ -1,3 +1,4 @@
+<%= javascript_pack_tag 'test' %>
 <div class="container wrapper-show">
   <div class="row">
     <div class="left-wrapper col-3">
@@ -16,7 +17,7 @@
               <tbody>
                 <tr>
                   <th scope="row">本の数</th>
-                  <td><%= "#{@books.length}" %></td>
+                  <td><%= "#{@book_all.length}" %></td>
                 </tr>
               </tbody>
             </table>
@@ -69,7 +70,7 @@
     <div class="list-books col-9">
       <div class="row">
         <% @books.each do |book| %>
-        <div class="item rounded-0 border border-secondary shadow">
+        <div class="item rounded border border-secondary shadow">
           <%= image_tag book.src.url ,class:"img-thumbnail" %>
           <div class="item-body">
             <h5 class="item-title"><%= book.title %></h5>
@@ -94,6 +95,8 @@
         </div>
         <% end %>
       </div>
+    <div class="page"><%= paginate @books %></div>
     </div>
+
   </div>
 </div>
