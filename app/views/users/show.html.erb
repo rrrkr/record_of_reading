@@ -1,7 +1,7 @@
 <%= javascript_pack_tag 'test' %>
 <div class="container wrapper-show">
   <div class="row">
-    <div class="left-wrapper col-3">
+    <div class="left-wrapper col-md-3 col-12">
       <div class="profile-card card shadow border-secondary">
         <div class="card-body">
           <%= image_tag "default.png",class:"rounded-circle",:size => '100x100'%>
@@ -68,7 +68,7 @@
 
     </div>
 
-    <div class="list-books col-9">
+    <div class="list-books col-md-9">
       <%= search_form_for @q,url: users_path,html:{class:"search-form"} do |f| %>
         <div class="form-group">
           <%= f.search_field :title_cont,class:"form-control" %>

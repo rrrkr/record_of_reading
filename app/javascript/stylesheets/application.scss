@@ -4,7 +4,9 @@
 .wrapper{
   min-height:100vh;
   position: relative;
+  //padding-bottom:60px;
   background-color:#ddd;
+  box-sizing:border-box;
 }
 	
 
@@ -30,7 +32,6 @@
     color:white;
   }
 }
-
 /* footer */
 footer {
   width:100%;
@@ -41,21 +42,15 @@ footer {
     color: white;
     font-size: 0.875rem;
   }
-  position:absolute;
-  bottom:0;
-  z-index:1;
 }
-
 /* home - bg */
 
 
 /* home - main */
 .main-content{
-  position:absolute;
-  top:50%;
-  left:50%;
-  z-index:1;
-  transform:translate(-50%,-50%);
+  margin-left:auto;
+  margin-right:auto;
+  width:400px;
 }
 .jumbotron{
   margin-bottom:0px;
@@ -116,12 +111,12 @@ footer {
 
 .list-books{
   margin-bottom:120px;
-  .row{
+  .row{/*
     display:grid;
     gap:26px;
     grid-template-columns:repeat(3,1fr);
     margin-top:6%;
-    margin-bottom:20px;
+    margin-bottom:20px;*/
     .item{
       text-align:center;
       width:272px;
@@ -146,4 +141,99 @@ footer {
 }
 .page{
   margin-top:60px;
+}
+
+/* media */
+// if media >= 768 then
+@media(min-width: 720px){
+  .wrapper{
+    position: relative;
+    box-sizing:border-box;
+  }
+  .navbar{
+    position:fixed;
+    width:100%;
+    top:0;
+    right:0;
+    left:0;
+    z-index:1030;
+  }
+  /* footer */
+  footer {
+    width:100%;
+    position:absolute;
+    bottom:0;
+    z-index:1;
+  }
+  .main-content{
+    margin-top:100px;
+    margin-bottom:100px;
+    width:500px;
+  }
+  .list-books{
+    .row{
+      display:grid;
+      gap:26px;
+      grid-template-columns:repeat(3,1fr);
+      margin-top:6%;
+      margin-bottom:20px;
+    }
+  }
+}
+
+// if media <= 768 then
+@media(max-width: 720px){
+  .container.header-content{
+    display:grid;
+    justify-content:center;
+    nav{
+      ul{
+        display:grid;
+      }
+    }
+  }
+  footer{
+    width:100%;
+    margin-top:100px;
+  }
+  .main-content{
+    margin-bottom:100px;
+  }
+  .list-books{
+    .row{
+      display:grid;
+      gap:26px;
+      grid-template-columns:repeat(2,1fr);
+      margin-top:6%;
+      margin-bottom:20px;
+    }
+  }
+}
+
+@media(max-width:540px){
+  .left-wrapper{
+    .profile-card,
+    .books-info-card,
+    .add-book-card{
+      width:100%;
+    }
+  }
+
+  .list-books{
+    .search-form{
+      .form-group{
+        width:100%;
+      }
+    }
+    .row{
+      display:grid;
+      gap:26px;
+      grid-template-columns:repeat(1,1fr);
+      margin-top:6%;
+      margin-bottom:20px;
+      .item{
+        width:100%;
+      }
+    }
+  }
 }
