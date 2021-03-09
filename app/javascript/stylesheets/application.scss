@@ -92,10 +92,15 @@ footer {
 
 /* usersコントローラ - show */
 .left-wrapper{
-  margin-top:6%;
+  margin-top:130px;
   .profile-card{
     margin-bottom:26px;
     text-align:center;
+    div{
+      .rounded-circle{
+        margin-bottom:20px;
+      }
+    }
   }
   .books-info-card{
     margin-bottom:26px;
@@ -126,6 +131,14 @@ footer {
         margin-bottom:20px;
       }
     }
+  }
+}
+
+.search-form{
+  div{
+    display:flex;
+    width:400px;
+    margin-top:40px;
   }
 }
 .card-img-top{

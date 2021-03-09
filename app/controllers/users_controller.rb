@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   def show
+    @q = current_user.books.ransack(params[:q])
     @book_all = current_user.books
-    @books = Kaminari.paginate_array(current_user.books).page(params[:page]).per(6)
+    #@books = Kaminari.paginate_array(current_user.books).page(params[:page]).per(6)
+    @books = @q.result(distinct: true).page(params[:page]).per(6)
   end
 
   def create

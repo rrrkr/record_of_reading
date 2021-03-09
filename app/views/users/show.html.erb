@@ -27,6 +27,7 @@
       <div class="add-book-card card shadow border-secondary">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">本の追加</button>
       </div>
+
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -68,6 +69,12 @@
     </div>
 
     <div class="list-books col-9">
+      <%= search_form_for @q,url: users_path,html:{class:"search-form"} do |f| %>
+        <div class="form-group">
+          <%= f.search_field :title_cont,class:"form-control" %>
+          <%= f.submit %>
+        </div>
+      <% end %>
       <div class="row">
         <% @books.each do |book| %>
         <div class="item rounded border border-secondary shadow">

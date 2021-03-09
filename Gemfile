@@ -39,6 +39,8 @@ gem 'mini_magick'
 
 gem 'kaminari'
 
+gem 'ransack'
+
 group :production do
   gem 'fog-aws'
  end
