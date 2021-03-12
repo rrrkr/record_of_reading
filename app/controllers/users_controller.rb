@@ -17,6 +17,6 @@ class UsersController < ApplicationController
 
   private
     def books_params
-      params.permit(:title,:categoly,:pages,:src)
+    params.permit(:title,:categoly,:pages,:src)
     end
 end

@@ -41,6 +41,8 @@ gem 'kaminari'
 
 gem 'ransack'
 
+gem 'fog'
+
 group :production do
   gem 'fog-aws'
  end
