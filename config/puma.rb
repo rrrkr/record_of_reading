@@ -46,12 +46,7 @@ workers Integer(ENV['WEB_CONCURRENCY'] || 2)
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
 
-
-
-
 rackup      DefaultRackup
-
-
 
 on_worker_boot do
   # Worker specific setup for Rails 4.1+
