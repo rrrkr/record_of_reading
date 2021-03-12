@@ -8,13 +8,13 @@
 
 User.create!(name:"hoge",email:"hoge@example.com",password:"password")
 
-for i in 1..6 do
-  Book.create!(
-    user_id:1,
-    title:"呪術廻戦#{i}",
-    categoly:"comic",
-    pages:198,
-    favorite:false,
-    src: File.open("#{Rails.root}/public/images/jujutsu#{i}.jpeg")
-  )
-end
+#for i in 1..6 do
+#  Book.create!(
+#    user_id:1,
+#    title:"呪術廻戦#{i}",
+#    categoly:"comic",
+#    pages:198,
+#    favorite:false,
+#    src: File.open("#{Rails.root}/public/images/jujutsu#{i}.jpeg")
+#  )
+#end
