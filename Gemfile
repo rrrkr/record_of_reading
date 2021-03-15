@@ -41,11 +41,11 @@ gem 'kaminari'
 
 gem 'ransack'
 
-gem 'fog'
+gem 'fog-aws'
 
-group :production do
-  gem 'fog-aws'
- end
+#group :production do
+#  gem 'fog-aws'
+#end
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
